@@ -1,20 +1,24 @@
 [user]
-	name = Michael Borens
-	email = appo.esl@gmail.com
+	name = xxxxxxx
+	email = xxxxxx@xxxxxx
+	signingkey = xxxxxxx
+[commit]
+    gpgsign = true
 [core]
 	ignorecase = false
 	excludesfile = /Users/michaelborens/.gitignore_global
 	editor = vim
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [alias]
-lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-st = status -sb
-bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	st = status -sb
+	bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
 [push]
 	default= simple
 
+[diff "ansible-vault"]
+	textconv = ansible-vault view
+[merge]
+	commit = no
+	ff = no
+[pull]
+	ff = yes
