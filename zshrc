@@ -2,38 +2,45 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/micborens/.oh-my-zsh
+export ZSH="/Users/michaelborens/.oh-my-zsh"
 
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='red'
 POWERLEVEL9K_MODE='Powerlevel9k'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="↱"
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="↱ "
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="↳ "
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -54,28 +61,35 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Which plugins would you like to load?
+# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  kubectl
-  helm
-  git
-  docker
-  aws
-  knife
-  pip
-  python
-  ruby
-  zsh-autosuggestions
-  zsh-syntax-highlighting
+    ansible
+    fd
+    encode64
+    extract
+    jsontools
+    fzf
+    git
+    python
+    pip
+    docker
+    helm
+    kubectl
+    zsh-autosuggestions
+    zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -97,9 +111,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -108,32 +119,27 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias krole="knife role from file"
-alias knode="knife node from file"
-alias gst="git st"
-alias gco="git commit"
-alias gpush="git push"
-alias dkps="docker ps"
-alias dkst="docker stats"
-alias dkpsa="docker ps -a"
-alias dkimgs="docker images"
-alias dkcpup="docker-compose up -d"
-alias dkcpdown="docker-compose down"
-alias dkcpstart="docker-compose start"
-alias dkcpstop="docker-compose stop"
-alias tunnelbdd="ssh -L 6033:service.1.proxysql.aramisauto:6033 bastion"
+alias decrypt-vault-cs="ansible-vault decrypt --vault-password-file $HOME/.ansible_vault_passwd group_vars/all/vault.yml"
 
-export PATH=~/homebrew/bin:$PATH
-export ANT_HOME=/usr/local/ant
-export M2_HOME=/usr/local/maven
-export PATH=$PATH:$M2_HOME/bin
-export PATH=$PATH:$M2_HOME/lib
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH:$ANT_HOME/bin
-source /Users/micborens/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-export GITHUB_OAUTH_TOKEN=36ae1ee724f88ad8675455a162b90d558aba23ad
-eval "$(ssh-agent -s)"
+# Ansible virtualenv python
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+export ANSIBLE_VAULT_PASSWORD_FILE=$HOME/.ansible_vault_passwd
+
+
+# Kubernetes config for platform_k8s-paas
+export AWS_DEFAULT_REGION=eu-west-1
+export ENV=dev:staging
+export KUBECONFIG=~/.kube/dev-$AWS_DEFAULT_REGION.yaml:~/.kube/staging-$AWS_DEFAULT_REGION.yaml
+
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/micborens/Documents/Aramisauto/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/micborens/Documents/Aramisauto/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/michaelborens/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/michaelborens/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/micborens/Documents/Aramisauto/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/micborens/Documents/Aramisauto/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/michaelborens/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/michaelborens/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+# GoLang Config
+export GOPATH="${HOME}/.go"
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
