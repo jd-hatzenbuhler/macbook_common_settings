@@ -1,0 +1,9 @@
+[us]
+region=us-east-1
+ouput=json
+[eu]
+region=eu-west-1
+output=json
+[default]
+region=eu-west-1
+output=json
