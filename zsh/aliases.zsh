@@ -1,6 +1,7 @@
 ## COMMON
 alias ls='/bin/ls -bFHGLOPW'
 alias tar="gtar"
+alias sed='gsed'
 alias cs='cd ~/Documents/Development/ContentSquare/Git/'
 alias tcurl="curl -w "@$HOME/.curl-format.txt" -o /dev/null -s"
 alias azswitch="az fzf subscription"
