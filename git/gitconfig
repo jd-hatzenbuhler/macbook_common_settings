@@ -1,0 +1,41 @@
+[user]
+	name = Michael BORENS
+	email = michael.borens@contentsquare.com
+    signingkey = <Your gpg signingkey>
+[commit]
+	gpgsign = true
+	template = /Users/michael.borens/.stCommitMsg
+[core]
+	ignorecase = false
+	excludesfile = /Users/michael.borens/.gitignore_global
+	editor = vim
+    pager = less -FRX
+[alias]
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	st = status -sb
+	bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
+[push]
+	default= simple
+
+[diff "ansible-vault"]
+	textconv = ansible-vault view
+[merge]
+	commit = no
+	ff = no
+	tool = vimdiff
+[pull]
+	ff = yes
+[gpg]
+	program = /usr/local/bin/gpg
+[tag]
+	forceSignAnnotated = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[fetch]
+	prune = yes
+	prunetags = true
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/

@@ -1,0 +1,14 @@
+*~
+.terraform/
+.terraform.d/
+.DS_Store
+.idea/
+mitogen-*
+.ansible/
+.ansible/*
+venv/
+*__pycache__/
+tfplan
+.venv/
+vault-*
+allure-commandline-2.13.9.zip

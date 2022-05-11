@@ -1,9 +1,27 @@
-[us]
-region=us-east-1
-ouput=json
-[eu]
-region=eu-west-1
-output=json
-[default]
-region=eu-west-1
-output=json
+[profile production]
+role_arn       = <arn_role>
+source_profile = default
+region = eu-west-1
+output = json
+cli_pager=
+
+[profile mgmt]
+role_arn       = <arn_role>
+source_profile = default
+region = eu-west-1
+output = json
+cli_pager=
+
+[profile drp-test]
+role_arn       = <arn_role>
+source_profile = default
+region = eu-west-1
+output = json
+cli_pager=
+
+[profile uat]
+role_arn       = <arn_role>
+source_profile = default
+region = eu-west-1
+output = json
+cli_pager=
