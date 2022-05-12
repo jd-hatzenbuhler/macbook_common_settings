@@ -5,22 +5,22 @@
         "revision": "5b27d37fe80970eef2e377723d65975e673d3cde"
       },
       "hashicorp/tap": {
-        "revision": "32a8aadd2f1ed3c72fdfd3aab7523680083a100f"
+        "revision": "92af172a438f7c35f924b6f22e82d1994b09e656"
       },
       "homebrew/bundle": {
         "revision": "92cfb59945e1a229d67e7c79d9c6eab93ae58525"
       },
       "homebrew/cask": {
-        "revision": "6a4e5a7805ca3cc48fd90754baa0bd75c960287d"
+        "revision": "e42ff17a8dcb0ce07a1d2ece81c0298b2880a21d"
       },
       "homebrew/core": {
-        "revision": "b5a8b0bf71567f445cc311f1a158024af3b56ac3"
+        "revision": "b2ccdb4bbdc5a2e7349e748663fbd5928df283f2"
       },
       "norwoodj/tap": {
         "revision": "3c122d941d250c97e52fefa0540572e127e73c49"
       },
       "warrensbox/tap": {
-        "revision": "cbd3c1b9896f1f3e13cd16509e5e21b36f93627c"
+        "revision": "d149bb04867eee4c382fe3ff35240930009ec35e"
       }
     },
     "brew": {
@@ -1773,7 +1773,7 @@
         "bottle": false
       },
       "warrensbox/tap/tfswitch": {
-        "version": "0.13.1218",
+        "version": "0.13.1221",
         "bottle": false
       }
     }
@@ -1783,7 +1783,7 @@
       "monterey": {
         "HOMEBREW_VERSION": "3.4.11",
         "HOMEBREW_PREFIX": "/usr/local",
-        "Homebrew/homebrew-core": "b5a8b0bf71567f445cc311f1a158024af3b56ac3",
+        "Homebrew/homebrew-core": "b2ccdb4bbdc5a2e7349e748663fbd5928df283f2",
         "CLT": "13.3.1.0.1.1648687083",
         "Xcode": "13.3.1",
         "macOS": "12.3.1"
