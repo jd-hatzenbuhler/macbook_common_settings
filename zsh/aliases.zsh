@@ -1,7 +1,6 @@
 ## COMMON
 alias ls='/bin/ls -bFHGLOPW'
 alias tar="gtar"
-alias sed='gsed'
 alias cs='cd ~/Documents/Development/ContentSquare/Git/'
 alias tcurl="curl -w "@$HOME/.curl-format.txt" -o /dev/null -s"
 alias azswitch="az fzf subscription"
@@ -10,17 +9,14 @@ alias azswitch="az fzf subscription"
 alias docker='podman'
 
 ## KUBERNETES
-alias ctx="kubie ctx"
-alias ns="kubie ns"
-
-## SSH
-alias ssh="/usr/bin/ssh"
-alias ssh-add="/usr/bin/ssh-add"
-alias ssh-agent="/usr/bin/ssh-agent"
+alias kctx='kubectx'
+alias kns='kubens'
+alias ctx='kubie ctx'
+alias ns='kubie ns'
 
 ## GIT
-alias gti="git"
-alias glg="git lg -25"
+alias gti='git'
+alias glg='git lg -25'
 alias gmerge='git merge --no-ff'
 alias grebase='git rebase -r'
 alias up='git fetch -p --all --tags -P -f && git pull --rebase'
